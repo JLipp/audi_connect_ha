@@ -73,7 +73,7 @@ class AudiConnectAccount:
                 break
 
             if i < self._connect_retries - 1:
-                _LOGGER.error(
+                _LOGGER.info(
                     "Login to Audi service failed, trying again in {} seconds".format(
                         self._connect_delay
                     )
@@ -574,7 +574,7 @@ class AudiConnectVehicle:
             raise
         except ClientResponseError as resp_exception:
             if resp_exception.status == 403 or resp_exception.status == 502:
-                _LOGGER.error(
+                _LOGGER.warn(
                     "support_preheater set to False: {status}".format(
                         status=resp_exception.status
                     )
