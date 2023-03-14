@@ -569,10 +569,10 @@ class Vehicle:
         try:
             info = "status"
             await self.call_update(self.async_update_status, ntries)
-            info = "shortterm"
-            await self.call_update(self.async_update_trip_shortterm, ntries)
-            info = "longterm"
-            await self.call_update(self.async_update_trip_longterm, ntries)
+            # info = "shortterm"
+            # await self.call_update(self.async_update_trip_shortterm, ntries)
+            # info = "longterm"
+            # await self.call_update(self.async_update_trip_longterm, ntries)
             info = "position"
             await self.call_update(self.async_update_position, ntries)
             info = "climater"
