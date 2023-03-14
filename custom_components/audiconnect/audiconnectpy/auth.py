@@ -187,7 +187,7 @@ class Auth:
             await self._async_login(username, password)
         except HttpRequestError as error:  # pylint: disable=broad-except
             if ntries > 1:
-                _LOGGER.error(
+                _LOGGER.warning(
                     "Login to Audi service failed, trying again in %s seconds",
                     DELAY,
                 )
